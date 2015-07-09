@@ -52,5 +52,12 @@ public String countvote() {
 	 }
 	return name;
 }
+public void reset() {
+	// TODO Auto-generated method stub
+	for(int i=0;i<candList.size();i++){
+		candList. get(i).reset();
+		  candList.remove(i);
+	 }
+}
 
 }

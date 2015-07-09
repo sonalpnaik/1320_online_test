@@ -38,4 +38,8 @@ public Candidate(String name, int age, String party, int noOfVotes) {
 public void inVotes(){
 	noOfVotes=noOfVotes+1;
 }
+public void reset() {
+	// TODO Auto-generated method stub
+	noOfVotes=0;
+}
 }

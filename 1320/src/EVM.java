@@ -3,7 +3,15 @@
 public class EVM {
 BallotingUnit buList;
 ControlUnit  cuList;
- 
+static int totalNumberOfVotes=0;
+public static int getTotalNumberOfVotes() {
+	return totalNumberOfVotes;
+}
+
+public static void setTotalNumberOfVotes(int totalNumberOfVotes) {
+	EVM.totalNumberOfVotes = totalNumberOfVotes;
+}
+
 public EVM(BallotingUnit buList, ControlUnit cuList) {
 	super();
 	this.buList = buList;
@@ -38,9 +46,14 @@ public void setCndidate(String candName,int age,String party,int noOfVotes){
 }
 public void setVotes(String candName){
 	 cuList.setVotes(candName);
+	 totalNumberOfVotes=totalNumberOfVotes+1;
 }
 public String countVotes(){
 	String winner=cuList.countvote();
 	return winner;
+}
+public void reset(){
+	totalNumberOfVotes=0;
+	cuList.reset();
 }
 }
